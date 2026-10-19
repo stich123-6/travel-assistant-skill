@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "owner_key": null,
+  "timezone": "Asia/Shanghai",
+  "origin_memory": {
+    "revision": 0,
+    "locations": []
+  },
+  "origin_policy": "ask_when_unspecified",
+  "transport_preference": null,
+  "arrival_buffer_minutes": null,
+  "system_calendar": {
+    "target": "phone_system_calendar",
+    "provider": null,
+    "account_label": null,
+    "calendar_id": null,
+    "integration_status": "not_connected"
+  },
+  "scheduler": {
+    "provider": null,
+    "integration_status": "not_verified"
+  }
+}
