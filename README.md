@@ -1,18 +1,22 @@
 # 行程安排助手
 
-供团队在 WorkBuddy 共享项目中使用的 Skill，当前版本 **1.1.1**。
+供团队在 WorkBuddy 共享项目中使用的 Skill，当前版本 **1.1.2**。
 
 支持外地出行、本市展会会议、备忘提醒、钉钉通知，以及常用出发地点的新增、修改、删除和卡片更新。没有说明本次出发地时先询问；手机确认后的系统日历写入保留待接入步骤。
 
+参展时没有展会名称，先问名称；拿到名称再搜索，仍无法确认时再问地址，信息明确后才规划。不用同类展会、往届信息或常见场馆替用户猜目的地。
+
 ## 在 WorkBuddy 中使用
 
-1. 下载 [Skill 安装包](travel-assistant-v1.1.1.zip)，在 WorkBuddy 技能管理中上传导入。
+1. 下载 [Skill 安装包](travel-assistant-v1.1.2.zip)，在 WorkBuddy 技能管理中上传导入。
 2. 按[团队项目配置](publish/WorkBuddy团队项目配置.md)创建“行程安排助手”项目，粘贴[项目指令](publish/WorkBuddy项目指令.md)，绑定本 Skill 和所需依赖。
 3. 邀请团队成员加入，在项目内新建自己的任务直接提出需求。
 
 依赖为腾讯地图 `tencentmap-map-assistant`、同程程心 `tc-chengxin`、滴滴 `didi-ride-skill`、钉钉 `dingtalk-unified`。本仓库不包含这些第三方 Skill 或其授权凭证。
 
-仓库用于团队内部保存和分发，访问需有 GitHub 仓库读取权限。GitHub 上传不代表已上架 WorkBuddy 技能市场，也不代表已创建 WorkBuddy 项目。
+本仓库公开提供Skill源码和安装包；实际WorkBuddy项目仍可仅向团队成员开放，用户地址与业务授权保存在本人私有存储。GitHub上传不代表已上架WorkBuddy技能市场，也不代表已创建WorkBuddy项目。
+
+从旧版升级时重新导入新版Skill，并替换项目指令中的相关规则；新建任务验证，不能认为GitHub文件更新会自动替换已经加载的旧Skill或项目指令。
 
 ## 使用示例
 
