@@ -1,0 +1,12 @@
+{
+  "name": "首科行程助手",
+  "name_en": "Soco Travel Assistant",
+  "description": "独立MCP行程助手，支持展会补问、路线与叫车流程、账号地点记忆。部分业务服务仍待接入。",
+  "description_en": "A persistent travel assistant MCP with event clarification, route and confirmed ride workflows.",
+  "source": "soco-travel-assistant",
+  "type": "mcp",
+  "version": "2.0.0",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": ["明天去上海参加农业展会，先帮我规划", "增加默认出发地点：公司，上海市某某路100号"],
+  "examples_en": ["Plan a trip to an exhibition, ask for missing details first.", "Save a new departure location."]
+}

@@ -1,6 +1,19 @@
 # 行程安排助手
 
-供团队在 WorkBuddy 共享项目中使用的 Skill，当前版本 **1.2.0**。
+当前主交付为 **首科行程助手独立 MCP 服务 2.0.0**，替代原 Skill 的编排与记忆存储。每位登录用户的地点、行程和加密凭证存于服务器，面向 WorkBuddy 提供 OAuth／PKCE 和 Streamable HTTP 工具。
+
+- [服务说明、功能状态与本地验证](mcp-service/README.md)
+- [1Panel + Docker 部署步骤](mcp-service/deploy/1Panel部署.md)
+- [独立 MCP 连接器材料](connectors/soco-travel-assistant/)
+- [服务与连接器部署包](travel-assistant-mcp-v2.0.0.zip)
+
+目标地址：`https://travel-assiant-mcp.st-arn.com/mcp`。**尚未在用户服务器部署验证。** 不改动原 `mcp.st-arn.com` 服务和 OneID 回调。
+
+同程与钉钉远程 MCP、真正定时提醒、手机系统日历仍待接入；手机云端还需平台绑定连接器和实际联调，不能把仓库更新等同于手机已可用。表单与卡片呈现依赖宿主能力。用户地址、Key、数据库和 `.env` 不放入公开仓库或发行包。
+
+## 历史 Skill 1.2.0
+
+以下为旧版 Skill 使用资料，保留参考，不代表独立 MCP 已安装或连接。新服务不会自动导入旧 Skill 的本地记忆或以前聊天的 Key。
 
 支持外地出行、本市展会会议、备忘提醒、钉钉通知，以及常用出发地点的新增、修改、删除和卡片更新。没有说明本次出发地时先询问；手机确认后的系统日历写入保留待接入步骤。
 

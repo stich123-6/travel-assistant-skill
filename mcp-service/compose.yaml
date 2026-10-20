@@ -1,0 +1,22 @@
+services:
+  travel-mcp:
+    build: .
+    image: soco-travel-assistant-mcp:2.0.0
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      TRAVEL_DATA_DIR: /app/data
+    ports:
+      - "127.0.0.1:8030:8030"
+    volumes:
+      - travel-data:/app/data
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+
+volumes:
+  travel-data:

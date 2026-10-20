@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "soco-travel-assistant": {
+      "type": "streamableHttp",
+      "url": "https://travel-assiant-mcp.st-arn.com/mcp",
+      "timeout": 60000
+    }
+  }
+}

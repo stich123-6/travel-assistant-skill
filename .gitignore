@@ -7,3 +7,10 @@ __pycache__/
 *.py[cod]
 *.tmp
 *.lock
+.venv/
+**/.venv/
+**/.pytest_cache/
+mcp-service/data/
+*.sqlite3
+*.sqlite3-*
+*.db
