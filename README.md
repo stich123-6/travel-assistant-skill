@@ -1,6 +1,6 @@
 # 行程安排助手
 
-供团队在 WorkBuddy 共享项目中使用的 Skill，当前版本 **1.1.3**。
+供团队在 WorkBuddy 共享项目中使用的 Skill，当前版本 **1.2.0**。
 
 支持外地出行、本市展会会议、备忘提醒、钉钉通知，以及常用出发地点的新增、修改、删除和卡片更新。没有说明本次出发地时先询问；手机确认后的系统日历写入保留待接入步骤。
 
@@ -8,13 +8,15 @@
 
 ## 在 WorkBuddy 中使用
 
-1. 下载 [Skill 安装包](travel-assistant-v1.1.3.zip)，在 WorkBuddy 技能管理中上传导入。
+1. 下载 [Skill 安装包](travel-assistant-v1.2.0.zip)，在 WorkBuddy 技能管理中上传导入。
 2. 按[团队项目配置](publish/WorkBuddy团队项目配置.md)创建“行程安排助手”项目，粘贴[项目指令](publish/WorkBuddy项目指令.md)，绑定本 Skill 和所需依赖。
 3. 邀请团队成员加入，在项目内新建自己的任务直接提出需求。
 
-依赖为腾讯地图 `tencentmap-map-assistant`、同程程心 `tc-chengxin`、滴滴官方 MCP（或 `didi-ride-skill`）、钉钉 `dingtalk-unified`。本仓库不包含这些第三方 Skill 或其授权凭证。
+腾讯地图、同程和滴滴改为MCP连接器调用，不自动回退到供应商Skill/CLI；钉钉保留`dingtalk-unified`现有接入。Skill负责意图、补问和规划，凭证交给宿主支持的本人授权机制管理，不保存在聊天、任务文件或地点记忆中。
 
-滴滴新增[独立 MCP 连接器配置](connectors/soco-travel-didi-mcp/)与[连接器包](soco-travel-didi-mcp-v1.0.0.zip)，接入步骤见[滴滴 MCP 接入说明](publish/滴滴MCP接入说明.md)。宿主已有滴滴 MCP 工具时直接调用，无需 OpenClaw/mcporter。WorkBuddy 自填 Token 模式仅本机保存凭证；手机云端仍需平台实际支持的本人授权入口，本版未完成云端授权联调。
+配置与状态见[MCP连接器配置](publish/MCP连接器配置.md)。已提供[腾讯地图连接器包](soco-travel-tencentmap-mcp-v1.0.0.zip)和[滴滴连接器包](soco-travel-didi-mcp-v1.0.0.zip)；同程官方MCP地址和schema尚待确认，查票保持待接入。连接器包是独立配置材料，不能上传为普通Skill。
+
+手机界面只能连接已有服务时，需要管理员/平台提供对应连接器，不能在手机直接添加本包。WorkBuddy自填Token模式仅本机保存凭证；手机云端授权和新任务复用仍需实际验证，本版未完成真实云端联调。
 
 本仓库公开提供Skill源码和安装包；实际WorkBuddy项目仍可仅向团队成员开放，用户地址与业务授权保存在本人私有存储。GitHub上传不代表已上架WorkBuddy技能市场，也不代表已创建WorkBuddy项目。
 

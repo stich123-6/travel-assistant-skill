@@ -1,0 +1,13 @@
+{
+  "name": "首科行程助手·腾讯地图接入",
+  "name_en": "Soco Travel Tencent Map Adapter",
+  "description": "行程助手自定义连接器，通过腾讯位置服务官方远程MCP搜索地点、规划路线、查询距离和天气。",
+  "description_en": "A custom travel connector for Tencent Location Service's official remote MCP, providing place search, routes, distance and weather.",
+  "source": "soco-travel-tencentmap-mcp",
+  "type": "mcp",
+  "version": "1.0.0",
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": ["搜索上海虹桥站的准确位置", "规划两个已确认地点之间的公交路线"],
+  "examples_en": ["Locate Shanghai Hongqiao Railway Station.", "Plan transit between two confirmed locations."]
+}

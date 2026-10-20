@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "soco-travel-tencentmap-mcp": {
+      "type": "streamableHttp",
+      "url": "https://mcp.map.qq.com/mcp?key=${TENCENT_MAP_API_KEY}&format=0",
+      "timeout": 30000
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "连接本人腾讯位置服务账号",
+  "title_en": "Connect your Tencent Location Service account",
+  "description": "填写本人腾讯位置服务Key，需开通所用WebServiceAPI权限及配额。WorkBuddy自填Token模式按官方说明仅在本机保存凭证，不能据此认定手机云端已授权。",
+  "description_en": "Enter your own Tencent Location Service Key with the required WebService API permissions and quota. WorkBuddy token mode stores credentials locally and does not automatically authorize cloud tasks.",
+  "docUrl": "https://lbs.qq.com/service/MCPServer/MCPServerGuide/userGuide",
+  "docLabel": "腾讯位置服务官方MCP接入说明",
+  "fields": [
+    {
+      "key": "TENCENT_MAP_API_KEY",
+      "label": "腾讯位置服务 Key",
+      "type": "password",
+      "required": true,
+      "placeholder": "在腾讯位置服务控制台创建并开通WebServiceAPI",
+      "description": "使用本人的Key，通过连接器配置，不发送到聊天或保存进Skill。"
+    }
+  ]
+}

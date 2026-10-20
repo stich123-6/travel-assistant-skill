@@ -1,12 +1,12 @@
 # 滴滴 MCP 接入说明
 
-本次按用户提供的[滴滴官方仓库](https://github.com/didi/didi-ride-skill)新增 WorkBuddy 自定义连接器配置，并在行程助手 v1.1.3 中加入原生 MCP 调用路径。连接器配置版本为 1.0.0，由本项目编写，不冒充官方发布资产。
+按用户提供的[滴滴官方仓库](https://github.com/didi/didi-ride-skill)准备 WorkBuddy 自定义连接器配置；行程助手当前v1.2.0统一使用出行服务MCP，不自动回退到供应商CLI。连接器配置版本仍为1.0.0，由本项目编写，不冒充官方发布资产。
 
 ## 已准备的内容
 
 - `connectors/soco-travel-didi-mcp/`：包含元信息、`mcp.json`、密码输入表单、图标和独立调用说明。
 - [连接器包](../soco-travel-didi-mcp-v1.0.0.zip)：供支持该格式的管理入口导入，或提交 WorkBuddy 开放平台审核；不当作普通 Skill 包导入。
-- [新版行程助手](../travel-assistant-v1.1.3.zip)：优先调用宿主已连接的滴滴 MCP，不再将 OpenClaw/mcporter 当作原生 MCP 的前置条件。
+- [新版行程助手](../travel-assistant-v1.2.0.zip)：使用宿主当前任务可用的滴滴MCP，不以OpenClaw/mcporter为前置条件；统一部署见[MCP连接器配置](MCP连接器配置.md)。
 
 上述文件不含真实 Key，没有绑定用户的 WorkBuddy 账号，也没有完成真实授权或叫车联调。
 
