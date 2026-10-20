@@ -1,0 +1,18 @@
+{
+  "title": "连接本人滴滴账号",
+  "title_en": "Connect your DiDi account",
+  "description": "填写本人滴滴 MCP Key。WorkBuddy 自填 Token 模式按官方说明将凭证保存在本机，不会因此自动授权手机云端任务。",
+  "description_en": "Enter your own DiDi MCP Key. WorkBuddy's token mode stores credentials locally and does not automatically authorize cloud tasks.",
+  "docUrl": "https://mcp.didichuxing.com/claw",
+  "docLabel": "前往滴滴官方平台激活 MCP Key",
+  "fields": [
+    {
+      "key": "DIDI_MCP_KEY",
+      "label": "滴滴 MCP Key",
+      "type": "password",
+      "required": true,
+      "placeholder": "在滴滴官方平台激活后填写",
+      "description": "仅填写本人的 Key；不要使用团队管理员或其他成员的 Key。"
+    }
+  ]
+}

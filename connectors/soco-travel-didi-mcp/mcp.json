@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "soco-travel-didi-mcp": {
+      "type": "streamableHttp",
+      "url": "https://mcp.didichuxing.com/mcp-servers?key=${DIDI_MCP_KEY}",
+      "timeout": 30000
+    }
+  }
+}

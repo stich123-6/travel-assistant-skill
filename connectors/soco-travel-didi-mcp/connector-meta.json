@@ -1,0 +1,19 @@
+{
+  "name": "首科行程助手·滴滴接入",
+  "name_en": "Soco Travel DiDi Adapter",
+  "description": "行程助手自定义连接器，调用滴滴官方远程 MCP，支持打车查价、手机跳转入口及经确认的订单操作。",
+  "description_en": "A custom travel assistant connector for DiDi's official remote MCP, with fare estimates, ride links and confirmed order actions.",
+  "source": "soco-travel-didi-mcp",
+  "type": "mcp",
+  "version": "1.0.0",
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": [
+    "查一下从北京西站到国贸打车多少钱，只查价",
+    "生成从已确认起点去会场的滴滴手机打开链接"
+  ],
+  "examples_en": [
+    "Estimate a ride from Beijing West Railway Station to Guomao without booking.",
+    "Generate a DiDi ride link for my confirmed pickup and venue."
+  ]
+}

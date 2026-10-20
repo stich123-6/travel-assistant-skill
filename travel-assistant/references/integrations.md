@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | 地图 | `tencentmap-map-assistant` | 地点搜索、路线规划、距离耗时、适用日期的天气 |
 | 票务 | `tc-chengxin` | 机票、火车票、综合交通；需要时查询住宿或旅游资源 |
-| 打车 | `didi-ride-skill` | 预估车费、手机跳转入口、用户明确要求的叫车与查单 |
+| 打车 | 宿主已连接的滴滴官方 MCP；或 `didi-ride-skill` | 预估车费、手机跳转入口、用户明确要求的叫车与查单 |
 | 钉钉 | `dingtalk-unified` | 联系人解析、立即消息；已接入调度时的定时消息发送 |
 | 手机系统日历 | 尚未接入 | 保留目标与待创建日程，后续绑定实际 Skill／连接器／移动端桥接 |
 | 定时调度 | 运行时按需发现 | 创建真实可持久任务，不能以本地记录替代 |
@@ -49,14 +49,14 @@
 
 ## 滴滴打车
 
-读取 `didi-ride-skill` 的完整`SKILL.md`和本次操作对应的`references/api_references.md`；错误时读其错误处理说明。
+先读[滴滴 MCP 接入](didi-mcp.md)，优先使用当前宿主已连接的滴滴官方远程 MCP。工具存在且调用成功时，不因缺少本地 `didi-ride-skill`、OpenClaw 或 mcporter 而报“未接入”。工具参数以当前宿主公开的 schema 为准。
 
-当前版本使用`mcporter`、OpenClaw配置及`DIDI_MCP_KEY`。实际 WorkBuddy 环境若有已提供的工具封装，按已安装版本说明和真实工具schema使用；缺少执行环境时提示具体缺项，不自行安装、不打印Key或把它拼进可见日志。
+没有原生 MCP 工具时，才检查 `didi-ride-skill` 的完整`SKILL.md`和本次操作对应的`references/api_references.md`；错误时读其错误处理说明。该包的 OpenClaw 方式需要`mcporter`、OpenClaw配置及`DIDI_MCP_KEY`，这些不是宿主原生 MCP 的前置要求。缺项时分别说明未安装、未启用、未授权或执行环境不支持，不将它们统称为缺 Token；不打印Key或含真实Key的连接URL。
 
 - 地点先通过滴滴要求的`maps_textsearch`解析，用户本次选择的家/公司必须展开为已确认的具体地址。多候选依其规则交用户选；不得因读到历史偏好就替用户选择出发地。
 - 查价使用`taxi_estimate`，保存真实`traceId`和实际可用车型。只问价格不创建订单。
 - 用户希望手机打开滴滴完成叫车时，若当前版本提供`taxi_generate_ride_app_link`，使用真实上下车点生成入口；点击入口不等于已叫到车。
-- 直接叫车只在用户明确要求时执行。`taxi_create_order`使用当前有效预估得到的`estimate_trace_id`和`product_category`，手机号按其契约可选；不要把预估坐标字段误传给下单接口。
+- 直接叫车需先展示本次预估的车型和价格，取得对应的明确下单同意；已有同一范围的同意不重复询问。`taxi_create_order`使用当前有效预估得到的`estimate_trace_id`和`product_category`，手机号按其契约可选；不要把预估坐标字段误传给下单接口。
 - 不把“建议打车”“同意行程”“同意创建日程”当成叫车指令。预约叫车和下单后查单按该 Skill 的实际调度要求执行；环境不支持其调度时不得声称预约成功。
 - 下单超时或返回结果不明时先核实订单；明确要求停止重试的错误遵循其处理规则，不盲目再次下单。
 
